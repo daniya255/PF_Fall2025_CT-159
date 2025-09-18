@@ -1,0 +1,25 @@
+ //Leap year checker
+#include <stdio.h>
+int main()
+{
+    int year;     //declaring a variable year
+    
+    printf("Enter the year of your choice : ");
+    scanf("%d",&year);
+    printf("\n");
+    
+    //checks if year is divisible by 4 or 400 and not divisible by 100 
+    if((year %4==0 && year % 100 !=0 ) || (year%400==0))
+    {
+          printf("Your entered year is a leap year.");
+    }
+    else
+    {
+        printf("Your entered year is not a leap year.");
+    } 
+    
+    getchar();
+    getchar();
+    
+}             
+    
