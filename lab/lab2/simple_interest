@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int principal,rate,time_period;
+    
+    printf("\nThe principal must be between 100-1,000,000");
+    printf("\nEnter your the principal : ");
+    scanf("%d",&principal);
+    
+    printf("\nThe rate if interest must be between 5%%-10%%");
+    printf("\nEnter the rate of interest : ");
+    scanf("%d",&rate);
+    
+    printf("\nThe time period must be between 1-10 years .");
+    printf("\nEnter the time period : ");
+    scanf("%d",&time_period);
+    
+    int simple_interest=(principal*rate*time_period)/100;
+    
+    printf("\nThe simple interest calculated by the given data is RS.%d",simple_interest);
+    
+    
+
+    return 0;
+}
