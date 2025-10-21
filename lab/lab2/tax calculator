@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int tax_rate,salary,tax;
+    
+    printf("\nEnter your monthly salary : ");
+    scanf("%d",&salary);
+    
+    printf("\nEnter the tax rate in percentage : ");
+    scanf("%d",&tax_rate);
+    
+    tax =(salary*tax_rate)/100;
+    
+    printf("\nThe tax you have to pay is RS.%d",tax);
+    printf("\nYour final salary after tax deduction is RS.%d",salary-tax);
+    
+
+    return 0;
+}
