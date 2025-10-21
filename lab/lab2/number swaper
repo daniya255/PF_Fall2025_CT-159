@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int a,b,temp;
+    
+    printf("\nEnter the first number : ");
+    scanf("%d",&a);
+    
+    printf("\nEnter the second number ");
+    scanf("%d",&b);
+    
+    temp=a;
+    a=b;
+    b=temp;
+    
+    printf("\nThe numbers after swaping are .....");
+    printf("\na=%d\nb=%d",a,b);
+    
+
+    return 0;
+}
