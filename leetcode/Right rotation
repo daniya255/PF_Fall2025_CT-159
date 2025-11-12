@@ -1,0 +1,30 @@
+void reverse(int *arr,int si,int ei)
+{
+    int i,j;
+    for(i=si,j=ei;i<j;i++,j--)
+    {
+        int temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
+    
+}
+
+void rotate(int *nums,int numsSize,int k) 
+{
+
+    if(numsSize<=0 || numsSize> 100000)
+    return ;
+
+
+    if(k<0 || k> 100000)
+        return ;
+
+    k%=numsSize;
+
+reverse(nums,0,numsSize-1);
+reverse(nums,0,k-1);
+reverse(nums,k,numsSize-1);
+
+}
+
