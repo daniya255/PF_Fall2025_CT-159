@@ -1,0 +1,26 @@
+
+int* plusOne(int* digits, int digitsSize, int* returnSize) {
+    int i;
+    int* newDigits = (int*) malloc((digitsSize + 1) * sizeof(int));
+    if (!newDigits) return 0;
+
+    int carry = 1;  // start with +1
+    for (i = digitsSize - 1; i >= 0; i--) {
+        int sum = digits[i] + carry;
+        newDigits[i + 1] = sum % 10; 
+        carry = sum / 10;             
+    }
+
+    if (carry) {
+        newDigits[0] = carry;
+        *returnSize = digitsSize + 1;
+        return newDigits;
+    } else {
+    
+        for (i = 0; i < digitsSize; i++) {
+            newDigits[i] = newDigits[i + 1];
+        }
+        *returnSize = digitsSize;
+        return newDigits;
+    }
+}
