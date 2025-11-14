@@ -1,4 +1,4 @@
-
+//1st  attempt
 int* plusOne(int* digits, int digitsSize, int* returnSize) {
     int i;
     int* newDigits = (int*) malloc((digitsSize + 1) * sizeof(int));
