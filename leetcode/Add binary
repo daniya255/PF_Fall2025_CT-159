@@ -1,0 +1,70 @@
+char* addBinary(char* a, char* b) {
+
+int alen=strlen(a);
+int blen=strlen(b);
+
+if(alen<1 || alen>10000)
+   return NULL;
+
+if(blen<1 || blen>10000)
+   return NULL;
+
+
+for(int i=0;a[i]!='\0';i++){
+    if(a[i]!='0' && a[i]!='1'){
+        return NULL;
+    }
+
+    if(a[0]=='0')
+    return NULL;
+}
+
+for(int i=0;b[i]!='\0';i++){
+    if(b[i]!='0' && b[i]!='1'){
+        return NULL;
+    
+    if(b[0]=='0')
+    return NULL;
+    }}
+
+int i = alen - 1;
+    int j = blen - 1;
+    int carry = 0;
+
+    int maxlen = (alen > blen ? alen : blen) + 2;
+
+    char *result = (char*)malloc(maxlen);
+    if(!result) return NULL;
+
+    int k = 0; 
+
+    while(i >= 0 || j >= 0 || carry){
+        int bitA = (i >= 0) ? a[i] - '0' : 0;
+        int bitB = (j >= 0) ? b[j] - '0' : 0;
+
+        int sum = bitA + bitB + carry;
+
+        result[k++] = (sum % 2) + '0';
+        carry = sum / 2;
+
+        i--;
+        j--;
+    }
+
+    
+    result[k] = '\0';
+
+  
+    for(int x = 0, y = k - 1; x < y; x++, y--){
+        char temp = result[x];
+        result[x] = result[y];
+        result[y] = temp;
+    }
+
+    return result;
+}
+
+
+
+
+    
