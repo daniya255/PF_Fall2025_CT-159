@@ -15,11 +15,7 @@ void inputMatrix(int rows, int cols, int matrix[rows][cols]) {
 void multiplyMatrix(int r1, int c1, int a[r1][c1],
                     int r2, int c2, int b[r2][c2],
                     int result[r1][c2]) {
-    if (c1 != r2) {
-        printf("Matrix multiplication not possible!\n");
-        return;
-    }
-
+    
     int i,j,k;
   
     for (i = 0; i < r1; i++) {
@@ -53,6 +49,12 @@ int main() {
     printf("Enter rows and columns for second matrix: ");
     scanf("%d %d", &r2, &c2);
 
+    if (c1 != r2) {
+        printf("Matrix multiplication not possible!\n");
+        return 0;
+    }
+
+
     int a[r1][c1], b[r2][c2], result[r1][c2];
 
    
@@ -61,10 +63,8 @@ int main() {
 
    
     multiplyMatrix(r1, c1, a, r2, c2, b, result);
-
-    
-    if (c1 == r2)
-        printMatrix(r1, c2, result);
+    printMatrix(r1, c2, result);
 
     return 0;
 }
+
