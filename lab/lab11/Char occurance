@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include<string.h>
+#include<ctype.h>
+void count_freq(char*c,int* max_freq,char* char_freq){
+    *max_freq=0;
+    int freq[256]={0};
+    
+    while(*c!='\0'){
+        if(*c!=' '){
+        int lower=tolower((int)(*c));
+        freq[lower]++;
+        if(*max_freq<freq[lower]){
+            *max_freq=freq[lower];
+            *char_freq=*c;
+        }
+    }
+    c++;
+    }
+}
+int main() {
+ char name[30];
+ char course[30];
+ printf("\nEnter your name : ");
+ scanf(" %[^\n]",name);
+ printf("\nEnter your course name : ");
+ scanf(" %[^\n]",course);
+ int name_freq,course_freq;
+ char name_char,course_char;
+ 
+ count_freq(name,&name_freq,&name_char);
+
+ printf("\n%s contains %c %d times",name,name_char,name_freq);
+ 
+  count_freq(course,&course_freq,&course_char);
+ printf("\n%s contains %c %d times",course,course_char,course_freq);
+ 
+
+ 
+    return 0;
+}
+
+
