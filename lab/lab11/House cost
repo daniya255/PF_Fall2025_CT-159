@@ -1,0 +1,38 @@
+#include<stdio.h>
+
+void showInstructions() {
+    printf("This program calculates the total cost of a house over 5 years.\n");
+    printf("You need to provide:\n");
+        printf("1. Initial cost of the house\n");
+    printf("2. Estimated annual fuel cost\n");
+    printf("3. Annual tax rate (as a decimal, e.g., 0.02 for 2%%)\n");
+    printf("The total cost includes initial cost + 5 years fuel + 5 years taxes.\n\n");
+}
+
+float total_cost(float initial_cost,float fuel_cost,float tax_rate){
+    
+    float annual_fuel=fuel_cost*5;
+    float annual_tax=tax_rate*initial_cost*5;
+    float house_cost=annual_fuel+ annual_tax +initial_cost;
+    
+    return house_cost;
+}
+
+void main(){
+    showInstructions();
+    
+    float initial_cost,fuel_cost,tax_rate;
+    
+    printf("\nEnter inital cost of the house : ");
+    scanf("%f",&initial_cost);
+    
+    printf("\nEnter initial cost of fuel : ");
+    scanf("%f",&fuel_cost);
+    
+    printf("\nEnter tax rate : ");
+    scanf("%f",&tax_rate);
+    
+    float house_total=total_cost(initial_cost,fuel_cost,tax_rate);
+    printf("\nThe total cost of the house after 5 years is : Rs %.2f",house_total);
+    
+}
