@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+void assign_position() {
+    int marks;
+    int experience = 0; 
+
+    printf("Enter test marks: ");
+    scanf("%d", &marks);
+
+    
+    if (marks >= 50 && marks < 60) {
+        printf("Selected for: Trainee Engineer\n");
+        return;
+    }
+
+    if (marks >= 60) {
+        printf("Enter years of experience: ");
+        scanf("%d", &experience);
+
+        if (marks >= 70 && experience >= 2) {
+            printf("Selected for: Associate Developer\n");
+        } 
+        else if (marks >= 60 && experience >= 1) {
+            printf("Selected for: Assistant Developer\n");
+        } 
+        else {
+            printf("Not eligible for Associate/Assistant Developer.\n");
+        }
+        return;
+    }
+
+    
+    printf("Not selected for any position.\n");
+}
+
+void main() {
+    assign_position();
+}
