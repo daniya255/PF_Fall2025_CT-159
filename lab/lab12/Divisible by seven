@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+
+long num,temp;
+int rest,last;
+printf("\nEnter any number : ");
+scanf("%ld",&num);
+
+while(num>9 || num<-9){
+    
+    last=num%10;
+    rest=num/10;
+    num=rest-(2*last);
+}
+
+if(num==0 || num==7 || num==-7)
+printf("\nThe number is divisible  by 7");
+
+else
+printf("\nThe number is not divisible by 7.");
+
+return 0;
+}
