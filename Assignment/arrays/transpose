@@ -1,0 +1,48 @@
+#include<stdio.h>
+void input(int r,int c,int arr[r][c]){
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            printf("Enter element at (%d,%d): ", i, j);
+            scanf("%d", &arr[i][j]);
+        }
+    }
+}
+
+void print(int r, int c, int arr[r][c]){
+    printf("\nResult Matrix:\n");
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            printf("%d ", arr[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void transpose(int r, int c, int arr[r][c],int result[c][r]){
+    for (int i=0;i<c;i++){
+        for(int j=0;j<r;j++){
+            //int temp=arr[i][j];
+            result[i][j]=arr[j][i];
+            //result[j][i]=temp;
+        }
+    }
+}
+
+int main(){
+    int r1,c1;
+    
+    printf("\nEnter the no of rows of first matrix : ");
+    scanf("%d",&r1);
+
+    printf("\nEnter the no of columns of first matrix : ");
+    scanf("%d",&c1);
+
+    
+    int a[r1][c1],r[c1][r1];
+    
+    input(r1,c1,a);
+    print(r1,c1,a);
+    transpose(r1,c1,a,r);
+    print(c1,r1,r);
+    
+}
