@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+// Define the Fraction structure
+typedef struct {
+    int numerator;
+    int denominator;
+} Fraction;
+
+// Function to compare two fractions
+int compare(Fraction f1, Fraction f2) {
+    // Cross-multiply to compare without using floating point
+    int lhs = f1.numerator * f2.denominator;
+    int rhs = f2.numerator * f1.denominator;
+
+    if (lhs == rhs)
+        return 0;      // Fractions are equal
+    else if (lhs > rhs)
+        return 1;      // First fraction is greater
+    else
+        return -1;     // Second fraction is greater
+}
+
+int main() {
+    Fraction f1, f2;
+
+    // Input first fraction
+    printf("Enter numerator and denominator of first fraction: ");
+    scanf("%d %d", &f1.numerator, &f1.denominator);
+
+    // Input second fraction
+    printf("Enter numerator and denominator of second fraction: ");
+    scanf("%d %d", &f2.numerator, &f2.denominator);
+
+    // Compare the fractions
+    int result = compare(f1, f2);
+
+    // Print the result
+    if (result == 0)
+        printf("Both fractions are equal.\n");
+    else if (result == 1)
+        printf("The first fraction is greater.\n");
+    else
+        printf("The second fraction is greater.\n");
+
+    return 0;
+}
